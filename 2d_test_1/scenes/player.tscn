@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdbxxrdxken8l"]
+
+[ext_resource type="SpriteFrames" uid="uid://b2i2kcdv6xhk5" path="res://animatios/player-animation.tres" id="1_hycbj"]
+[ext_resource type="Script" path="res://scripts/player.cs" id="1_wt6u0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmltp"]
+radius = 27.0
+height = 70.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_wt6u0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("1_hycbj")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cmltp")
